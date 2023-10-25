@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 $request = Request::createFromGlobals();
 
 $map = [
-    '/' => 'index',
+    '/' => 'home',
     '/articles' => 'articles', 
     '/article/es' => 'article_es',
     '/article/en' => 'article_en',
