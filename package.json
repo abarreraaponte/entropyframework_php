@@ -1,0 +1,14 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "css:watch": "sass --watch assets/sass/main.scss www/css/main.css",
+        "css:build": "sass assets/sass/main.scss www/css/main.css"
+    },
+    "devDependencies": {
+        "sass": "^1.69.4"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.2"
+    }
+}

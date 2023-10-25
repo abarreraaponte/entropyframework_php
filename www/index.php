@@ -7,8 +7,10 @@ use Symfony\Component\HttpFoundation\Response;
 $request = Request::createFromGlobals();
 
 $map = [
-    '/hello' => 'hello',
-    '/bye' => 'bye',
+    '/' => 'index',
+    '/articles' => 'articles', 
+    '/article/es' => 'article_es',
+    '/article/en' => 'article_en',
 ];
 
 $path = $request->getPathInfo();
@@ -16,7 +18,7 @@ $path = $request->getPathInfo();
 if(isset($map[$path])) {
     ob_start();
     extract($request->query->all(), EXTR_SKIP);
-    include sprintf(__DIR__.'/../src/pages/%s.php', $map[$path]);
+    include sprintf(__DIR__.'/../pages/%s.php', $map[$path]);
     $response = new Response(ob_get_clean());
 }
 
